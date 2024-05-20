@@ -52,7 +52,7 @@ if (!isset($_SESSION['username'])) {
         <h2>New Entry</h2>
         <form action="insert.php" method="POST" enctype="multipart/form-data">
             <div class="form-item">
-                <label for="title">News Title</label>
+                <label for="title">News Title (5-100 characters)</label>
                 <div class="form-field">
                     <input type="text" name="title" class="form-field-textual">
                     <div id="titleError" class="error-message"></div>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['username'])) {
             </div>
         
             <div class="form-item">
-                <label for="about">Summary (up to 50 characters)</label>
+                <label for="about">Summary (10-200 characters)</label>
                 <div class="form-field">
                     <textarea name="about" id="" class="form-field-textual" rows="4"></textarea>
                     <div id="aboutError" class="error-message"></div>
@@ -125,7 +125,7 @@ if (!isset($_SESSION['username'])) {
                 echo '<form enctype="multipart/form-data" action="update.php" method="POST" id="' . $row['id'] . '">';
 
                 echo '<div class="form-item">
-                        <label for="title">News Title</label>
+                        <label for="title">News Title (5-100 characters)</label>
                         <div class="form-field">
                             <input type="text" required name="title" class="form-field-textual" value="' . $row['title'] . '">
                             <div class="error-message titleError"></div>
@@ -133,7 +133,7 @@ if (!isset($_SESSION['username'])) {
                       </div>';
 
                 echo '<div class="form-item">
-                        <label for="about">Summary (up to 100 characters)</label>
+                        <label for="about">Summary (10-200 characters)</label>
                         <div class="form-field">
                             <textarea name="about" required class="form-field-textual" rows="4">' . $row['summary'] . '</textarea>
                             <div class="error-message aboutError"></div>
