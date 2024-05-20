@@ -1,6 +1,6 @@
-# LeParisien - Projektni zadatak iz kolegija Programiranje web aplikacija
+# LeParisien - projektni zadatak iz kolegija Programiranje web aplikacija
 
-A web application built with HTML, CSS, PHP, and JavaScript.
+A responsive CRUD (Create, Read, Update, Delete) web application built with HTML, CSS, PHP, and JavaScript.
 
 ## Installation
 
@@ -23,11 +23,27 @@ A web application built with HTML, CSS, PHP, and JavaScript.
 
 ## Screenshots on how the project should look like (provided by professor):
 
-### Homepage
-<img src="https://raw.githubusercontent.com/N0ksa/LeParisien/main/assets/118447696/51637f9a-5070-4a93-9ce7-ac870c6397b8.png" width="400">
 
-### Article Page
-<img src="https://raw.githubusercontent.com/N0ksa/LeParisien/main/assets/118447696/c218b880-c64b-4361-8096-f4f5537fdfd3.png" width="400">
+Homepage             |  Article Page
+:-------------------------:|:-------------------------:
+![Homepage](https://github.com/N0ksa/LeParisien/assets/118447696/89adb557-283a-4bdb-9898-beb46186b15e)  |  ![Article Page](https://github.com/N0ksa/LeParisien/assets/118447696/a89ba1ed-7895-495a-ab60-a1fb0890ad23)
 
-## Short 60-second Demo
-<img src="https://raw.githubusercontent.com/N0ksa/LeParisien/main/assets/118447696/3b0c005f-b146-4095-acbc-1fa858e04222.gif" width="400">
+
+## Short 60-second Demo on Desktop
+<img src="https://github.com/N0ksa/LeParisien/assets/118447696/1ff74b9b-efe3-4242-a299-0655eda5c745" alt="Short Demo" width="600">
+
+
+## Short 40-second Demo on Mobile
+![Screen_recording_20240520_133854-ezgif com-optimize](https://github.com/N0ksa/LeParisien/assets/118447696/067d40ce-1a4c-4bd0-8735-31c84d31b3ad)
+
+
+
+## Longer Demo
+Watch the longer demo on YouTube:
+[![Longer Demo](https://example.com/longer-demo-thumbnail.png)](https://www.youtube.com/watch?v=VIDEO_ID)
+
+## Live Page
+Visit the live page.
+Live page is hosted on Google Cloud, run and powered by a Google virtual server with XAMPP.
+[Live Page](https://projektnizadatak.ddns.net/)
+
