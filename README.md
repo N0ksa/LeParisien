@@ -40,14 +40,17 @@ Homepage             |  Article Page
 
 
 ## Longer Demo
-Watch the longer demo on YouTube:
-[![Longer Demo](https://example.com/longer-demo-thumbnail.png)](https://www.youtube.com/watch?v=VIDEO_ID)
+[Watch on YouTube](https://youtu.be/0Wp3Llqe_dI)
+
 
 ## Live Page
 Live page is hosted on Google Cloud, run and powered by a Google virtual server with XAMPP.
 [LeParisien.com](https://projektnizadatak.ddns.net/)
 
-To log in as admin, use the following credentials:
-Username: admin
-Password: admin
+## Additional information
+To log in as an admin and access administrative functionalities, please use the following credentials:
+- **Username:** admin
+- **Password:** admin
+
+For any questions or feedback, feel free to reach out to me.
 
