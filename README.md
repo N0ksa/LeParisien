@@ -34,7 +34,8 @@ Homepage             |  Article Page
 
 
 ## Short 40-second Demo on Mobile
-![Screen_recording_20240520_133854-ezgif com-optimize](https://github.com/N0ksa/LeParisien/assets/118447696/067d40ce-1a4c-4bd0-8735-31c84d31b3ad)
+<img src="https://github.com/N0ksa/LeParisien/assets/118447696/067d40ce-1a4c-4bd0-8735-31c84d31b3ad" alt="Short Demo on Mobile" height="500">
+
 
 
 
@@ -43,7 +44,10 @@ Watch the longer demo on YouTube:
 [![Longer Demo](https://example.com/longer-demo-thumbnail.png)](https://www.youtube.com/watch?v=VIDEO_ID)
 
 ## Live Page
-Visit the live page.
 Live page is hosted on Google Cloud, run and powered by a Google virtual server with XAMPP.
-[Live Page](https://projektnizadatak.ddns.net/)
+[LeParisien.com](https://projektnizadatak.ddns.net/)
+
+To log in as admin, use the following credentials:
+Username: admin
+Password: admin
 
