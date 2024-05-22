@@ -7,6 +7,10 @@ $username = "root";
 $password = "";
 $basename = "le_parisien";
 
+
+
+//U slučaju kada nije moguće uspostaviti vezu sa bazom podataka dolazi do bacanja iznimke, koju ovdje hvatamo i prikazujemo html sa porukom da nema veze s bazom.
+
 try {
    
     $dbc = mysqli_connect($servername, $username, $password, $basename);

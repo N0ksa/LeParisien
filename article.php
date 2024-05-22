@@ -2,12 +2,13 @@
 include 'connect.php'; 
 include 'utility.php';
 include 'paths.php'; 
+include 'queries.php';
 
 if(isset($_GET['id'])) {
 
     $id = $_GET['id'];
 
-    $query = "SELECT * FROM articles WHERE id = ?";
+    $query = QUERY_SELECT_ARTICLE_BY_ID;
     $stmt = mysqli_prepare($dbc, $query);
     
     mysqli_stmt_bind_param($stmt, 'i', $id);

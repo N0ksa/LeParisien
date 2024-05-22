@@ -2,6 +2,7 @@
 include 'utility.php';
 include 'connect.php';
 include 'paths.php'; 
+include 'queries.php';
 session_start();
 
 // U slučaju da korisnik direktno pristupi putanji /programiranje_web_aplikacija/projekt/login.php
@@ -111,7 +112,7 @@ if (!isset($_SESSION['username'])) {
         </form>
 
         <?php
-            $query = "SELECT * FROM articles ORDER BY articleDate DESC";
+            $query = QUERY_GET_ALL_ARTICLES_ORDERED_BY_DATE;
             $result = mysqli_query($dbc, $query);
 
             $first = true;

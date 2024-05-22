@@ -2,6 +2,7 @@
 include 'connect.php';
 include 'utility.php';
 include 'paths.php';
+include 'queries.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['title']) && isset($_POST['about']) && isset($_POST['content']) && isset($_FILES['photo'])) {
@@ -22,22 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             $date = date('Y-m-d H:i:s');
             
-            $query = "INSERT INTO articles (articleDate, title, summary, articleText, imagePath, category, archive) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?)";
-            
+            $query = QUERY_INSERT_ARTICLE;
            
             $stmt = mysqli_prepare($dbc, $query);
             
-          
             mysqli_stmt_bind_param($stmt, "ssssssi", $date, $title, $about, $content, $picture, $category, $archive);
             
-        
             $success = mysqli_stmt_execute($stmt);
             
-          
             if ($success) {
                
                 if ($archive) {
+                    
                     displaySuccessMessage('Article successfully archived.', INSERT_ARTICLE);
                 } else {
                     

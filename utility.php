@@ -1,5 +1,7 @@
 <?php
 
+include 'queries.php';
+
 //Pomoćne metode za generiranje poruka, vijesti...
 
 function displaySuccessMessage($message, $redirectUrl = null) {
@@ -46,7 +48,7 @@ function generateLogoutButton($username) {
 
 function generateArticleSection($dbc, $category)
 {
-    $query = "SELECT * FROM articles WHERE archive=0 AND category='$category' ORDER BY STR_TO_DATE(articleDate, '%Y-%m-%d %H:%i:%s') DESC LIMIT 3";
+    $query = QUERY_GET_LATEST_UNARCHIVED_ARTICLES_BY_CATEGORY;
     $result = mysqli_query($dbc, $query);
     while($row = mysqli_fetch_array($result)) {
         echo '
@@ -61,7 +63,7 @@ function generateArticleSection($dbc, $category)
 
 function generateArticles($dbc, $category)
 {
-    $query = "SELECT * FROM articles WHERE archive=0 AND category='$category' ORDER BY STR_TO_DATE(articleDate, '%Y-%m-%d %H:%i:%s') DESC";
+    $query = QUERY_GET_UNARCHIVED_ARTICLES_BY_CATEGORY;
     $result = mysqli_query($dbc, $query);
 
     echo '<div class="row">';

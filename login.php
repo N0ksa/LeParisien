@@ -2,6 +2,7 @@
 include 'connect.php';
 include 'utility.php';
 include 'paths.php';
+include 'queries.php';
 
 session_start();
 
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = mysqli_real_escape_string($dbc, $_POST['username']);
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE username=?";
+    $query = QUERY_CHECK_USERNAME;
     $stmt = mysqli_prepare($dbc, $query);
     mysqli_stmt_bind_param($stmt, "s", $username);
     mysqli_stmt_execute($stmt);

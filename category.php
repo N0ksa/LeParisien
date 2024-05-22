@@ -4,13 +4,21 @@ include 'connect.php';
 include 'utility.php'; 
 include 'paths.php'; 
 
-$category = isset($_GET['category']) ? mysqli_real_escape_string($dbc, $_GET['category']) : null;
 
-if(!$category) {
-    mysqli_connect($dbc);
+// Provjeravam da li je kategorija prisutna u URL-u. Ako jest, dodatno provjeravamo da li je korisnik ručno unio neku kategoriju koja ne postoji.
+// Ako je unio kategoriju koja ne postoji ili ako kategorija nije prisutna u URL-u, ispisujemo poruku i preusmjeravamo prema index.php
+
+
+$category = isset($_GET['category']) ? $_GET['category'] : null;
+
+if (!$category) {
     display404Message("Category not found", HOME);
-    exit; 
+    exit;
+} elseif (!in_array($category, ["sports", "politics"])) {
+    display404Message("$category does not exist. You cannot manually enter a category!", HOME);
+    exit;
 }
+
 
 ?>
 

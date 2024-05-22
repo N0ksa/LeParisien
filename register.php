@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     include 'connect.php';
     include 'utility.php';
+    include 'queries.php';
 
     // Ovaj dio koda se izvršava ako je prošla validacija putem javascripta. 
     // Iz baze provjeravamo da li username postoji. Ako postoji, onda prikazujemo div sa notifikacijom da je username zauzet.
@@ -89,8 +90,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
     
-    $checkQuery = "SELECT * FROM users WHERE username = '$username'";
-    $checkResult = mysqli_query($dbc, $checkQuery);
+    $checkQuery = QUERY_CHECK_USER;
+    $stmt = mysqli_prepare($dbc, $checkQuery);
+    mysqli_stmt_bind_param($stmt, 's', $username);
+    mysqli_stmt_execute($stmt);
+    $checkResult = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($checkResult) > 0) {
 
@@ -103,7 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $userLevel = 0;
         
-        $query = "INSERT INTO users (name, surname, username, password, level) VALUES ('$name', '$surname', '$username', '$hashedPassword', $userLevel)";
+        $query = QUERY_INSERT_USER;
+        $stmt = mysqli_prepare($dbc, $query);
+        mysqli_stmt_bind_param($stmt, 'ssssi', $name, $surname, $username, $hashedPassword, $userLevel);
+        $result = mysqli_stmt_execute($stmt);
 
         $result = mysqli_query($dbc, $query);
         mysqli_close($dbc);

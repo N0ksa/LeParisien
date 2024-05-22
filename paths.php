@@ -2,7 +2,6 @@
 
 //Konstante za putanje prema skriptama ili slikama
 
-
 define('UPLPATH', './images/'); 
 define('HOME', 'index.php'); 
 define('SPORTS', 'category.php?category=sports'); 
