@@ -2,7 +2,7 @@
 include 'connect.php';
 include 'utility.php';
 include 'paths.php';
-include 'queries.php';
+require_once 'queries.php';
 
 session_start();
 
@@ -11,6 +11,7 @@ Ako postoji aktivna sesija, prvo ćemo provjeriti razinu korisničkih prava.
 Ako korisnik ima administratorske ovlasti, bit će preusmjeren na stranicu za unos novih vijesti.
 U suprotnom, ako korisnik nema administratorske ovlasti, bit će prikazana poruka
 da nema dozvolu za pristup kao administrator i biti će preusmjeren na početnu stranicu. */
+
 if (isset($_SESSION['username'])) {
     
     $username = $_SESSION['username'];
@@ -38,6 +39,7 @@ Provjeravamo u bazi da li postoji korisnik sa navedenim username-om i password-o
 i ako postoji, postavljamo sesiju te preusmjeravamo na početnu stranicu. 
 Ako ne postoji takav korisnik, šaljemo notifikaciju i ponovno preusmjeravamo na login.
 */
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = mysqli_real_escape_string($dbc, $_POST['username']);
     $password = $_POST['password'];

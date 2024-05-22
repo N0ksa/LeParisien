@@ -2,7 +2,7 @@
 include 'connect.php'; 
 include 'utility.php';
 include 'paths.php'; 
-include 'queries.php';
+require_once 'queries.php';
 
 if(isset($_GET['id'])) {
 

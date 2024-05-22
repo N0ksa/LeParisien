@@ -3,6 +3,7 @@ session_start();
 include 'connect.php';
 include 'utility.php';
 include 'paths.php'; 
+
 ?>
 
 <!DOCTYPE html>

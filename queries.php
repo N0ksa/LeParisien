@@ -1,4 +1,4 @@
-<?php>
+<?php
 
     //Defininirani upiti prema bazi podataka
 

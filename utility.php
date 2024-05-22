@@ -1,6 +1,7 @@
 <?php
 
-include 'queries.php';
+require_once 'queries.php';
+
 
 //Pomoćne metode za generiranje poruka, vijesti...
 
@@ -49,7 +50,14 @@ function generateLogoutButton($username) {
 function generateArticleSection($dbc, $category)
 {
     $query = QUERY_GET_LATEST_UNARCHIVED_ARTICLES_BY_CATEGORY;
-    $result = mysqli_query($dbc, $query);
+    $stmt = mysqli_prepare($dbc, $query);
+    mysqli_stmt_bind_param($stmt, "s", $category);
+    mysqli_stmt_execute($stmt);
+
+
+    $result = mysqli_stmt_get_result($stmt);
+
+
     while($row = mysqli_fetch_array($result)) {
         echo '
             <article class="col-lg-4 col-md-6 col-sm-12">
@@ -64,7 +72,10 @@ function generateArticleSection($dbc, $category)
 function generateArticles($dbc, $category)
 {
     $query = QUERY_GET_UNARCHIVED_ARTICLES_BY_CATEGORY;
-    $result = mysqli_query($dbc, $query);
+    $stmt = mysqli_prepare($dbc, $query);
+    mysqli_stmt_bind_param($stmt, "s", $category);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     echo '<div class="row">';
     while ($row = mysqli_fetch_array($result)) {
@@ -77,7 +88,7 @@ function generateArticles($dbc, $category)
     }
     echo '</div>';
 
-    mysqli_close($dbc);
+    mysqli_stmt_close($stmt);
 }
 
 function displayArticle($article)
