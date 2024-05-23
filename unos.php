@@ -2,7 +2,7 @@
 include 'utility.php';
 include 'connect.php';
 include 'paths.php'; 
-include 'queries.php';
+require_once 'queries.php';
 session_start();
 
 // U slučaju da korisnik direktno pristupi putanji /programiranje_web_aplikacija/projekt/login.php
@@ -69,7 +69,7 @@ if (!isset($_SESSION['username'])) {
             </div>
         
             <div class="form-item">
-                <label for="content">Content</label>
+                <label for="content">Content (50-10_000)</label>
                 <div class="form-field">
                     <textarea name="content" id="" class="form-field-textual" rows="8"></textarea>
                     <div id="contentError" class="error-message"></div>
@@ -142,7 +142,7 @@ if (!isset($_SESSION['username'])) {
                       </div>';
 
                 echo '<div class="form-item">
-                        <label for="content">Content</label>
+                        <label for="content">Content (50-10_000 characters)</label>
                         <div class="form-field">
                             <textarea name="content" required class="form-field-textual" rows="8">' . $row['articleText'] . '</textarea>
                             <div class="error-message contentError"></div>

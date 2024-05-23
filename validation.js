@@ -63,6 +63,13 @@ function validateFormForNewArticle() {
         contentTextarea.classList.add('error-border:focus');
         contentTextarea.classList.remove('success-border');
         contentTextarea.classList.remove('success-border:focus');
+    } else if (contentTextarea.value.length < 50 || contentTextarea.value.length > 10000) {
+        document.getElementById('contentError').innerText = "News content must be between 50 and 10,000 characters long";
+        isValid = false;
+        contentTextarea.classList.add('error-border');
+        contentTextarea.classList.add('error-border:focus');
+        contentTextarea.classList.remove('success-border');
+        contentTextarea.classList.remove('success-border:focus');
     } else {
         document.getElementById('contentError').innerText = "";
         contentTextarea.classList.add('success-border');
@@ -70,6 +77,7 @@ function validateFormForNewArticle() {
         contentTextarea.classList.remove('error-border');
         contentTextarea.classList.remove('error-border:focus');
     }
+    
 
     if (photoInput.value === "") {
         document.getElementById('photoError').innerText = "Image must be selected";
@@ -112,7 +120,12 @@ document.addEventListener('DOMContentLoaded', function() {
     contentTextarea.addEventListener('input', function() {
         if (contentTextarea.value.trim() === "") {
             contentTextarea.classList.add('error-border');
-            contentTextarea.classList.add('errror-border:focus');
+            contentTextarea.classList.add('error-border:focus'); 
+            contentTextarea.classList.remove('success-border');
+            contentTextarea.classList.remove('success-border:focus');
+        } else if (contentTextarea.value.length < 50 || contentTextarea.value.length > 10000) {
+            contentTextarea.classList.add('error-border');
+            contentTextarea.classList.add('error-border:focus');
             contentTextarea.classList.remove('success-border');
             contentTextarea.classList.remove('success-border:focus');
         } else {
@@ -122,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             contentTextarea.classList.remove('error-border:focus');
         }
     });
+    
     
     photoInput.addEventListener('change', function() {
         if (photoInput.value === "") {
@@ -180,12 +194,27 @@ function validateFormForExistingArticle(formId) {
     }
 
     if (contentTextarea.value.trim() === "") {
-        contentError.innerText = "News content cannot be empty";
+        document.getElementById('contentError').innerText = "News content cannot be empty";
         isValid = false;
+        contentTextarea.classList.add('error-border');
+        contentTextarea.classList.add('error-border:focus');
+        contentTextarea.classList.remove('success-border');
+        contentTextarea.classList.remove('success-border:focus');
+    } else if (contentTextarea.value.length < 50 || contentTextarea.value.length > 10000) {
+        document.getElementById('contentError').innerText = "News content must be between 50 and 10,000 characters long";
+        isValid = false;
+        contentTextarea.classList.add('error-border');
+        contentTextarea.classList.add('error-border:focus');
+        contentTextarea.classList.remove('success-border');
+        contentTextarea.classList.remove('success-border:focus');
     } else {
-        contentError.innerText = "";
+        document.getElementById('contentError').innerText = "";
+        contentTextarea.classList.add('success-border');
+        contentTextarea.classList.add('success-border:focus');
+        contentTextarea.classList.remove('error-border');
+        contentTextarea.classList.remove('error-border:focus');
     }
-
+    
     return isValid;
 }
 
@@ -221,7 +250,12 @@ document.addEventListener('DOMContentLoaded', function() {
         contentTextarea.addEventListener('input', function() {
             if (contentTextarea.value.trim() === "") {
                 contentTextarea.classList.add('error-border');
-                contentTextarea.classList.add('errror-border:focus');
+                contentTextarea.classList.add('error-border:focus'); 
+                contentTextarea.classList.remove('success-border');
+                contentTextarea.classList.remove('success-border:focus');
+            } else if (contentTextarea.value.length < 50 || contentTextarea.value.length > 10000) {
+                contentTextarea.classList.add('error-border');
+                contentTextarea.classList.add('error-border:focus');
                 contentTextarea.classList.remove('success-border');
                 contentTextarea.classList.remove('success-border:focus');
             } else {
