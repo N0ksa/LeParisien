@@ -49,8 +49,8 @@ Live page is hosted on Google Cloud, run and powered by a Google virtual server 
 
 ## Additional information
 To log in as an admin and access administrative functionalities, please use the following credentials:
-- **Username:** admin
-- **Password:** admin
+- **Username:** ADMIN
+- **Password:** ADMIN
 
 For any questions or feedback, feel free to reach out to me.
 
