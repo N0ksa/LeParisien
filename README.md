@@ -37,15 +37,9 @@ Homepage             |  Article Page
 <img src="https://github.com/N0ksa/LeParisien/assets/118447696/067d40ce-1a4c-4bd0-8735-31c84d31b3ad" alt="Short Demo on Mobile" height="500">
 
 
-
-
 ## Longer Demo
 [Watch on YouTube](https://youtu.be/0Wp3Llqe_dI)
 
-
-## Live Page
-Live page is hosted on Google Cloud, run and powered by a Google virtual server with XAMPP.
-[LeParisien.com](https://projektnizadatak.ddns.net/)
 
 ## Additional information
 To log in as an admin and access administrative functionalities, please use the following credentials:
