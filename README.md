@@ -43,8 +43,8 @@ Homepage             |  Article Page
 
 ## Additional information
 To log in as an admin and access administrative functionalities, please use the following credentials:
-- **Username:** ADMIN
-- **Password:** ADMIN
+- **Username:** admin
+- **Password:** admin
 
 For any questions or feedback, feel free to reach out to me.
 
