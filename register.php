@@ -112,7 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($stmt, 'ssssi', $name, $surname, $username, $hashedPassword, $userLevel);
         $result = mysqli_stmt_execute($stmt);
 
-        $result = mysqli_query($dbc, $query);
         mysqli_close($dbc);
 
         if ($result) {
